@@ -1,2 +1,8 @@
 #!/usr/bin/python3
-print("{}".format("zYxWvUtSrQpOnMlKjIhGfEdCbA"), end="")
+i = 122
+for j in range(26):
+    print("{}".format(chr(i)), end="")
+    if (i > 96):
+        i -= 33
+    else:
+        i += 31
