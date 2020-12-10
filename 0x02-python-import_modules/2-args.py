@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 import sys
-args = len(sys.argv) - 1
-if args == 0:
-    print("0 arguments.")
-else:
-    print("{:d} {}:".format(args, "argument" if args == 1 else "arguments"))
-    for i in range(1, args + 1):
-        print("{}".format(sys.argv[i]))
+if __name__ == "__main__":
+    ac = len(sys.argv) - 1
+    if ac == 0:
+        print("0 arguments.")
+    else:
+        print("{:d} {}:".format(ac, "argument" if ac == 1 else "arguments"))
+        for i in range(1, ac + 1):
+            print("{:d}: {}".format(i, sys.argv[i]))
