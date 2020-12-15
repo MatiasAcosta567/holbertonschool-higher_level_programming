@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def print_list_integer(my_list=[]):
-    for el in my_list:
-        print(el)
+    for i in range(0, len(my_list) - 1):
+        print(my_list[i])
