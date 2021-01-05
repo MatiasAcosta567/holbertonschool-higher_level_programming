@@ -6,18 +6,12 @@ class Square:
     """Square class"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize a new square.
-        Args:
-            size (int): The size of the new square.
-            position (int, int): The position of the new square.
-        """
+        """Initialize a new square."""
         if type(size) != int:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        if type(position) is not tuple:
-            raise TypeError('position must be a tuple of 2 positive integers')
-        elif len(position) != 2:
+        if type(position) is not tuple or len(position) != 2:
             raise TypeError('position must be a tuple of 2 positive integers')
         elif type(position[0]) != int or type(position[1]) != int:
             raise TypeError('position must be a tuple of 2 positive integers')
@@ -28,20 +22,17 @@ class Square:
 
     def __str__(self):
         """print an square"""
-        string = ""
-        for x in range(self.__position[1]):
-            string += "\n"
-        if self.__size == 0:
-            string += "\n"
-            return string
-        for i in range(self.__size):
-            for y in range(self.__position[0]):
-                string += " "
-            for j in range(self.__size):
-                string += "#"
-            if i < self.__size - 1:
-                string += "\n"
-        return string
+        if self.__size > 0:
+            for x in range(self.__position[1]):
+                print()
+            for i in range(self.__size):
+                for y in range(self.__position[0]):
+                    print(" ", end="")
+                for j in range(self.__size):
+                    print("#", end="")
+                if i < self.__size - 1:
+                     print()
+        return ("")
 
     def area(self):
         """Method to calculate the area of square"""
