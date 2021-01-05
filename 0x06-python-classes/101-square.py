@@ -36,7 +36,8 @@ class Square:
                 string += " "
             for j in range(self.__size):
                 string += "#"
-            string += "\n"
+            if i < self.__size - 1:
+                string += "\n"
         return string
 
     def area(self):
@@ -88,4 +89,5 @@ class Square:
                 print(" ", end="")
             for j in range(self.__size):
                 print("#", end="")
-            print()
+            if i < self.__size - 1:
+                print()
