@@ -1,18 +1,22 @@
 #!/usr/bin/python3
 """Magic module"""
 
+import math
+
+
 class MagicClass:
     """Magic Class"""
     def __init__(self, radius):
         """Constructor method"""
-        if type(radius) is not int or type(radius) is not float:
+        self.__radius = 0
+        if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
-        self.radius = radius
+        self.__radius = radius
 
     def area(self):
         """return the area of a circle"""
-        return (self.radius ** 2) * math.pi
+        return (self.__radius ** 2) * math.pi
 
     def circumference(self):
         """retutrn a circumference of a circle"""
-        return (2 * math.pi) * self.radius
+        return (2 * math.pi) * self.__radius
