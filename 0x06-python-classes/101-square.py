@@ -28,6 +28,8 @@ class Square:
 
     def __str__(self):
         """print an square"""
+        if self.__size == 0
+            return "\n"
         string = ""
         for x in range(self.__position[1]):
             string += "\n"
