@@ -24,7 +24,7 @@ class Square:
     def __eq__(self, Square):
         """Method comparative"""
         return self.area() == Square.area()
- 
+
     def __ge__(self, Square):
         """Method comparative"""
         return self.area() >= Square.area()
