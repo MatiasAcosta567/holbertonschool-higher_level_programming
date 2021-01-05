@@ -5,7 +5,7 @@ class MagicClass:
     """Magic Class"""
     def __init__(self, radius):
         """Constructor method"""
-        if type(radius) != int or type(radius) != float:
+        if type(radius) is not int or type(radius) is not float:
             raise TypeError("radius must be a number")
         self.radius = radius
 
