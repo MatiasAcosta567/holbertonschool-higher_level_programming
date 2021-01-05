@@ -22,17 +22,18 @@ class Square:
 
     def __str__(self):
         """print an square"""
+        string = ""
         if self.__size > 0:
             for x in range(self.__position[1]):
-                print()
+                string += "\n"
             for i in range(self.__size):
                 for y in range(self.__position[0]):
-                    print(" ", end="")
+                    string += " "
                 for j in range(self.__size):
-                    print("#", end="")
+                    string += "#"
                 if i < self.__size - 1:
-                     print()
-        return ("")
+                    string += "\n"
+        return string
 
     def area(self):
         """Method to calculate the area of square"""
