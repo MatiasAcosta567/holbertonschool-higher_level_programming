@@ -1,5 +1,6 @@
 #!/usr/bin/python3
+count = -1
 def magic_string():
-    count = 0
-    magic_string.count += 1
-    return "Holberton" * count
+    global count
+    count += 1
+    return "Holberton, " * count + "Holberton"
