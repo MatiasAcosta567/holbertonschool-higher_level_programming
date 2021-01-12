@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-from sys import argv
+from sys import argv, exit
 
-if argv == 2:
+if len(argv) == 2:
     number = argv[1]
-    if (type(number) != int):
+    if (number.isdigit()):
+        number = int(number)
+        if number < 4:
+            print("N must be at least 4")
+            exit(1)
+    else:
         print("N must be a number")
-        sys.exit(1)
-    if number < 4:
-        print("N must be at least 4")
-        sys.exit(1)
+        exit(1)
 else:
     print("Usage: nqueens N")
-    sys.exit(1)
+    exit(1)
+solution = False
+while(
