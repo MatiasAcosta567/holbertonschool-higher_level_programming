@@ -2,19 +2,7 @@
 """Module of geometry"""
 
 
-class BaseGeometry:
-    """Class about base geometry"""
-
-    def area(self):
-        """Calculate area of geometry"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Validator of integer"""
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -41,7 +29,7 @@ class Square(Rectangle):
         """Constructor method"""
         super().integer_validator("size", size)
         self.__size = size
-        super().__init__(size, size)
+        Rectangle.__init__(self,size, size)
 
     def area(self):
         """Area method"""
