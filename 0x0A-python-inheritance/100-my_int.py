@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+"""Module Documentation"""
 
 
 class MyInt(int):
     """Class MyInt"""
+
     def __init__(self, number):
         """Init MyInt"""
         self.__number = number

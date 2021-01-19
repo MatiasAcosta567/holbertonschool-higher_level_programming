@@ -35,14 +35,18 @@ class Rectangle(BaseGeometry):
 
 
 class Square(Rectangle):
+    """Square class"""
 
     def __init__(self, size):
+        """Constructor method"""
         super().integer_validator("size", size)
         self.__size = size
         super().__init__(size, size)
 
     def area(self):
+        """area method"""
         return super().area()
 
     def __str__(self):
+        """string method"""
         return "[Square] {}/{}".format(self.__size, self.__size)
