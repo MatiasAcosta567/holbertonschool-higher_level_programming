@@ -20,7 +20,7 @@ class BaseGeometry:
 class Rectangle(BaseGeometry):
     """Class Rectangle inherited of base geometry"""
 
-    def __init__(self, width=0, height=0):
+    def __init__(self, width, height):
         """Constructor method"""
         self.integer_validator("width", width)
         self.__width = width
