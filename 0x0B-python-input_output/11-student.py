@@ -6,10 +6,10 @@ class Student:
     """Student Class"""
 
     def __init__(self, first_name, last_name, age):
-       """Constructor method"""
-       self.age = age
-       self.last_name = last_name
-       self.first_name = first_name
+        """Constructor method"""
+        self.age = age
+        self.last_name = last_name
+        self.first_name = first_name
 
     def to_json(self, attrs=None):
         """Json function"""
@@ -29,5 +29,4 @@ class Student:
         """Json function"""
         for key, value in json.items():
             if key in self.__dict__:
-                self.key = value
-
+                self.__dict__[key] = value
