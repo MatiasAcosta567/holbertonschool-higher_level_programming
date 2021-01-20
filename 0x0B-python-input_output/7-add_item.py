@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-"""import"""
+"""imports"""
 import json
 from sys import argv
-import os
 """Module documentation"""
 
 
