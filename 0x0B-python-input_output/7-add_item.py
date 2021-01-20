@@ -11,4 +11,4 @@ except:
     elems = []
 for i in argv[1:]:
     elems.append(i)
-save_to_json_file(elems, file_name)
+save_to_json_file(elems, "add_item.json")
