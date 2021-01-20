@@ -11,7 +11,6 @@ try:
 except:
         json_list = []
 
-        for arg in argv[1:]:
-                json_list.append(arg)
-
-                save_to_json_file(json_list, "add_item.json")
+for arg in argv[1:]:
+    json_list.append(arg)
+    save_to_json_file(json_list, "add_item.json")
