@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""new task"""
 import json
 """Module documentation"""
 
