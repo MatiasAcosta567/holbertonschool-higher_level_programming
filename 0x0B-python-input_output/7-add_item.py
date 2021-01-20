@@ -13,6 +13,6 @@ try:
     elems = load_from_json_file(file_name)
 except:
     elems = []
-for i in range(1, len(argv)):
-    elems.append(argv[i])
+for i in argv[1:]:
+    elems.append(i)
 save_to_json_file(elems, file_name)
