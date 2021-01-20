@@ -10,4 +10,4 @@ def append_after(filename="", search_string="", new_string=""):
             write_file.write(line)
             if search_string in line:
                 write_file.write(new_string)
-        input_file.close()
+        write_file.close()
