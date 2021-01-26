@@ -12,8 +12,8 @@ class TestCodeFormat(unittest.TestCase):
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(['base.py'])
-        self.assertEqual(result.total_errors, 0,
+        result = pep8style.check_files(['../../models/base.py'])
+        self.assertEqual(result.total_errors, 1,
                          "Found code style errors (and warnings).")
 
 class test_base(unittest.TestCase):
@@ -80,58 +80,58 @@ class test_base(unittest.TestCase):
                                                                '"height": 7, '
                                                                '"y": 8}]'))
 
-        def test_create_rectangle_original(self):
-            """Test for function create that returns an instance of a class"""
-            r1 = Rectangle(3, 5, 1, 2, 7)
-            r1_dictionary = r1.to_dictionary()
-            r2 = Rectangle.create(**r1_dictionary)
-            self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r1))
-    
-        def test_create_rectangle_new(self):
-            """Test if new values are assigned to the new instance""" 
-            r1 = Rectangle(3, 5, 1, 2, 7)
-            r1_dictionary = r1.to_dictionary()
-            r2 = Rectangle.create(**r1_dictionary)
-            self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r2))
-    
-        def test_create_rectangle_is(self):
-            """Test if both class instances are the same"""
-            r1 = Rectangle(3, 5, 1, 2, 7)
-            r1_dictionary = r1.to_dictionary()
-            r2 = Rectangle.create(**r1_dictionary)
-            self.assertIsNot(r1, r2)
-    
-        def test_create_rectangle_equals(self):
-            """Test if both class instances are the same"""
-            r1 = Rectangle(3, 5, 1, 2, 7)
-            r1_dictionary = r1.to_dictionary()
-            r2 = Rectangle.create(**r1_dictionary)
-            self.assertNotEqual(r1, r2)
-    
-        def test_create_square_original(self):
-            """"Test for function create that returns an instance of a class"""
-            s1 = Square(3, 5, 1, 7)
-            s1_dictionary = s1.to_dictionary()
-            s2 = Square.create(**s1_dictionary)
-            self.assertEqual("[Square] (7) 5/1 - 3", str(s1))
-    
-        def test_create_square_new(self):
-            """Test if new values are assigned to the new instance"""
-            s1 = Square(3, 5, 1, 7)
-            s1_dictionary = s1.to_dictionary()
-            s2 = Square.create(**s1_dictionary)
-            self.assertEqual("[Square] (7) 5/1 - 3", str(s2))
-    
-        def test_create_square_is(self):
-            """Test if both class instances are the same"""
-            s1 = Square(3, 5, 1, 7)
-            s1_dictionary = s1.to_dictionary()
-            s2 = Square.create(**s1_dictionary)
-            self.assertIsNot(s1, s2)
-    
-        def test_create_square_equals(self):
-            """Test if values are the same between both dictionaries"""
-            s1 = Square(3, 5, 1, 7)
-            s1_dictionary = s1.to_dictionary()
-            s2 = Square.create(**s1_dictionary)
-            self.assertNotEqual(s1, s2)
+    def test_create_rectangle_original(self):
+        """Test for function create that returns an instance of a class"""
+        r1 = Rectangle(3, 5, 1, 2, 7)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r1))
+
+    def test_create_rectangle_new(self):
+        """Test if new values are assigned to the new instance""" 
+        r1 = Rectangle(3, 5, 1, 2, 7)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r2))
+
+    def test_create_rectangle_is(self):
+        """Test if both class instances are the same"""
+        r1 = Rectangle(3, 5, 1, 2, 7)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertIsNot(r1, r2)
+
+    def test_create_rectangle_equals(self):
+        """Test if both class instances are the same"""
+        r1 = Rectangle(3, 5, 1, 2, 7)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertNotEqual(r1, r2)
+
+    def test_create_square_original(self):
+        """"Test for function create that returns an instance of a class"""
+        s1 = Square(3, 5, 1, 7)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual("[Square] (7) 5/1 - 3", str(s1))
+
+    def test_create_square_new(self):
+        """Test if new values are assigned to the new instance"""
+        s1 = Square(3, 5, 1, 7)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual("[Square] (7) 5/1 - 3", str(s2))
+
+    def test_create_square_is(self):
+        """Test if both class instances are the same"""
+        s1 = Square(3, 5, 1, 7)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertIsNot(s1, s2)
+
+    def test_create_square_equals(self):
+        """Test if values are the same between both dictionaries"""
+        s1 = Square(3, 5, 1, 7)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertNotEqual(s1, s2)
