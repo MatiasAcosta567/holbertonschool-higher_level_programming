@@ -98,7 +98,7 @@ class Base:
                     lists.append(cls.create(**obj))
                 return lists
         except Exception:
-            return lists
+            return lists    
 
     @classmethod
     def save_to_file_csv(cls, list_objs):

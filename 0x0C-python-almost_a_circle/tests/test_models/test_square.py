@@ -161,6 +161,18 @@ class Test_Square(unittest.TestCase):
             square.update(size=[1, 2, 3])
             square.update(2, x="ate", y=3)
 
+    def test_display(self):
+        """test the display function"""
+        import io
+        import contextlib
+
+        inst = Square(3)
+        with io.StringIO() as fd:
+            with contextlib.redirect_stdout(fd):
+                inst.display()
+                rec = fd.getvalue()
+        self.assertEqual(rec, '###\n###\n###\n')
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

@@ -6,6 +6,7 @@ import unittest
 from models.square import Square
 from models.rectangle import Rectangle
 import pep8
+from os import path
 
 
 class TestCodeFormat(unittest.TestCase):
@@ -135,3 +136,13 @@ class test_base(unittest.TestCase):
         s1_dictionary = s1.to_dictionary()
         s2 = Square.create(**s1_dictionary)
         self.assertNotEqual(s1, s2)
+
+    def test_load_from_file(self):
+        """With a class"""
+        r1 = Rectangle(2, 3)
+        if not path.exists("Rectangle.json"):
+            lists = Rectangle.load_from_file()
+            self.assertEqual(lists, [])
+
+    def test_load_from_exist_file(self):
+        
