@@ -1,2 +1,2 @@
 -- DO
-show TABLES;
+SHOW TABLES;
