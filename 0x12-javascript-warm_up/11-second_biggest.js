@@ -12,11 +12,12 @@ function biggest (arr) {
   });
   return (indx);
 }
-if (process.argv.length <= 3) {
+let copy = process.argv.slice();
+if (copy.length <= 3) {
   console.log(0);
 } else {
-  idx = biggest(process.argv);
-  process.argv.splice(idx, 1);
-  idx = biggest(process.argv);
-  console.log(process.argv[idx]);
+  idx = biggest(copy);
+  copy.splice(idx, 1);
+  idx = biggest(copy);
+  console.log(copy[idx]);
 }
