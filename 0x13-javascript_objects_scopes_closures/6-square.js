@@ -3,7 +3,6 @@
 const Parent = require('./5-square');
 
 class Square extends Parent {
-
   charPrint (c) {
     let square = '';
     for (let y = 0; y < this.height; y++) {
