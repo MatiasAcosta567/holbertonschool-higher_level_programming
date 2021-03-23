@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 
 const Rectangle = require('./4-rectangle');
 
@@ -11,7 +11,7 @@ class Square extends Rectangle {
     let square = '';
     for (let y = 0; y < this.height; y++) {
       for (let x = 0; x < this.width; x++) {
-        square += c != undefined ? c : 'X';
+        square += c !== undefined ? c : 'X';
       }
       if (y < this.height - 1) {
         square += '\n';
