@@ -1,14 +1,12 @@
 #!/usr/bin/node
 const dict = require('./101-data').dict;
-const keys = Object.keys(dict);
 const newDict = {};
-for (const elem in keys) {
-  console.log(dict[keys[elem]]);
-  console.log(keys[elem]);
-  if (newDict.hasOwnProperty(dict[keys[elem]])) {
-    newDict[dict[keys[elem]]].push(keys[elem]);
+for (const key in dict) {
+  const val = dict[key];
+  if (newDict[val] === undefined) {
+    newDict[val] = [key];
   } else {
-    newDict[dict[keys[elem]]] = [keys[elem]];
+    newDict[val].push(key);
   }
 }
 console.log(newDict);
