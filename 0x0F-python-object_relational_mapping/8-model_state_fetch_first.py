@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Documentation """
 from sys import argv
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
@@ -17,7 +18,7 @@ if __name__ == '__main__':
 
         session = Session()
         state = session.query(State).order_by(State.id).first()
-        if (state == None):
+        if (not state):
             print("Nothing")
         else:
             print("{}: {}".format(state.id, state.name))

@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Documentation """
 from sys import argv
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
@@ -20,6 +21,6 @@ if __name__ == '__main__':
             for letter in state.name:
                 if letter == 'a':
                     session.delete(state)
-                    break;
+                    break
         session.commit()
         session.close()
