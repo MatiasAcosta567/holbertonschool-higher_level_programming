@@ -15,7 +15,7 @@ if __name__ == "__main__":
         cur = conn.cursor()
         query = ("SELECT `name` FROM `cities`\
                  WHERE `state_id` IN (SELECT `id` FROM `states`\
-                 BINARY WHERE `name` = %(state)s)")
+                 WHERE BINARY `name` = %(state)s)")
         cur.execute(query, {'state': state})
         query_rows = cur.fetchall()
         for index, row in enumerate(query_rows):
