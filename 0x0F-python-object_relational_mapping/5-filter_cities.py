@@ -18,11 +18,14 @@ if __name__ == "__main__":
                  WHERE BINARY `name` = %(state)s)")
         cur.execute(query, {'state': state})
         query_rows = cur.fetchall()
-        for index, row in enumerate(query_rows):
-            print(row[0], end="")
-            if (index < len(query_rows) - 1):
-                print("", end=", ")
-            else:
-                print()
+        if (len(query_rows) == 0):
+            print()
+        else:
+            for index, row in enumerate(query_rows):
+                print(row[0], end="")
+                if (index < len(query_rows) - 1):
+                    print("", end=", ")
+                else:
+                    print()
         cur.close()
         conn.close()
