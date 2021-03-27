@@ -13,10 +13,10 @@ if __name__ == "__main__":
                                user=username, passwd=password,
                                db=dbname, charset="utf8")
         cur = conn.cursor()
-        cur.execute("SELECT * FROM `states` WHERE name='{}' \
-                     ORDER BY `id`".format(state))
+        cur.execute("SELECT * FROM `states` ORDER BY `id`")
         query_rows = cur.fetchall()
         for row in query_rows:
-            print(row)
+            if (row[1][0] == 'N'):
+                print(row)
         cur.close()
         conn.close()
