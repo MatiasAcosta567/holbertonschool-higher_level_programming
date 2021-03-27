@@ -13,7 +13,8 @@ if __name__ == "__main__":
                                user=username, passwd=password,
                                db=dbname, charset="utf8")
         cur = conn.cursor()
-        cur.execute("SELECT * FROM `states` WHERE `name` = '{}'".format(state))
+        cur.execute("SELECT * FROM `states` WHERE\
+            BINARY `name` = '{}'".format(state))
         query_rows = cur.fetchall()
         for row in query_rows:
             print(row)
