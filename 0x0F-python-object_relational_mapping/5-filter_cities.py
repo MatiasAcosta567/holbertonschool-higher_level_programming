@@ -13,9 +13,10 @@ if __name__ == "__main__":
                                user=username, passwd=password,
                                db=dbname, charset="utf8")
         cur = conn.cursor()
-        query = ("SELECT name FROM cities \
-                 WHERE state_id IN (SELECT id FROM states WHERE name=%(state)s)")
-        cur.execute(query, { 'state': state })
+        query = ("SELECT `name` FROM `cities`\
+                 WHERE `state_id` IN (SELECT `id` FROM `states`\
+                 BINARY WHERE `name` = %(state)s)")
+        cur.execute(query, {'state': state})
         query_rows = cur.fetchall()
         for index, row in enumerate(query_rows):
             print(row[0], end="")
