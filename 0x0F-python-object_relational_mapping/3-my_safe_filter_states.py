@@ -13,8 +13,9 @@ if __name__ == "__main__":
                                user=username, passwd=password,
                                db=dbname, charset="utf8")
         cur = conn.cursor()
-        query = "SELECT * FROM states WHERE name=%(state)s ORDER BY id ASC"
-        cur.execute(query, { 'state': state })
+        query = "SELECT * FROM `states` WHERE\
+            BINARY `name` = %(state)s ORDER BY id ASC"
+        cur.execute(query, {'state': state})
         query_rows = cur.fetchall()
         for row in query_rows:
             print(row)
