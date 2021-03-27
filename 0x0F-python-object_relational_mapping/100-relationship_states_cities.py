@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+""" Documentation """
 from sys import argv
-from relationship_state import  State
+from relationship_state import State
 from relationship_city import City, Base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)

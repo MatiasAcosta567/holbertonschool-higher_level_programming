@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+""" Documentation """
 from sys import argv
-from relationship_state import  State
+from relationship_state import State
 from relationship_city import City, Base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
@@ -19,5 +20,4 @@ if __name__ == '__main__':
         for state in session.query(State).all():
             print("{}: {}".format(state.id, state.name))
             for cities in state.cities:
-                print("\t{}: {}".format(cities.id,cities.name))
-
+                print("\t{}: {}".format(cities.id, cities.name))
