@@ -2,21 +2,22 @@
 """Find a peak in a unsorted list of integers"""
 
 
-def find_peak(li):
+def find_peak(list_integers):
     """Find a peak in a unsorted list of integers"""
-    peak = []
-    size = len(li)
-    if li is None:
+    if list_integers == []:
         return None
+
+    size = len(list_integers)
     if size == 1:
-        return li[0]
+        return list_integers[0]
     elif size == 2:
-        return max(li)
+        return max(list_integers)
+
+    middle = int(size / 2)
+    peak = list_integers[middle]
+    if peak > list_integers[middle - 1] and peak > list_integers[middle + 1]:
+        return peak
+    elif peak < list_integers[middle - 1]:
+        return find_peak(list_integers[:middle])
     else:
-        for index in range(1, size - 1):
-            if li[index] >= li[index - 1] and li[index] >= li[index + 1]:
-                peak.append(li[index])
-        if len(peak) == 0:
-            return None
-        else:
-            return max(peak, key=int)
+        return find_peak(list_integers[middle + 1:])
