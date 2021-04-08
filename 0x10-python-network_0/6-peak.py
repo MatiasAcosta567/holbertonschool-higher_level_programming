@@ -1,5 +1,14 @@
 #!/usr/bin/python3
-def find_peak(list_of_integers):
-    for index in range(len(list_of_integers)):
+"""Find a peak in a unsorted list of integers"""
 
-    
+
+def find_peak(li):
+    peak = []
+    if li is not None and len(li) >= 3:
+        for index in range(1, len(li) - 1):
+            if li[index] >= li[index - 1] and li[index] >= li[index + 1]:
+                peak.append(li[index])
+    if len(peak) == 0:
+        return None
+    else:
+        return max(peak, key=int)
