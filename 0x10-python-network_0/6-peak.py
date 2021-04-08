@@ -4,10 +4,15 @@
 
 def find_peak(li):
     peak = []
-    if li is not None and len(li) >= 3:
-        for index in range(1, len(li) - 1):
-            if li[index] >= li[index - 1] and li[index] >= li[index + 1]:
-                peak.append(li[index])
+    if li is not None:
+        if len(li) == 1:
+            return li[0]
+        if len(li) == 2:
+            return max(li)
+        else:
+            for index in range(1, len(li) - 1):
+                if li[index] >= li[index - 1] and li[index] >= li[index + 1]:
+                    peak.append(li[index])
     if len(peak) == 0:
         return None
     else:
