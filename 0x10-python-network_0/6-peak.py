@@ -2,7 +2,7 @@
 """Find a peak in a unsorted list of integers"""
 
 
-def find_peak(list_integers):
+def find_peak(list_of_integers):
     """Find a peak in a unsorted list of integers"""
     if list_of_integers == []:
         return None
