@@ -12,8 +12,11 @@ if __name__ == "__main__":
     data = {"q": argv[1] if len(argv) == 2 else ""}
     url = "http://0.0.0.0:5000/search_user"
     response = requests.post(url, data=data)
-    json_resp = response.json()
-    if len(json_resp) == 0:
-        print("No result")
-    else:
-        print("[{}] {}".format(json_resp.get("id"), json_resp.get("name")))
+    try:
+        json_resp = response.json()
+        if len(json_resp) == 0:
+            print("No result")
+        else:
+            print("[{}] {}".format(json_resp.get("id"), json_resp.get("name")))
+    except:
+        print("Not a valid JSON")
