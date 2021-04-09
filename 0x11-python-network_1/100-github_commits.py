@@ -15,7 +15,7 @@ if __name__ == "__main__":
     for index, elem in enumerate(commits):
         if index <= 9:
             author = elem.get('commit').get('author').get('name')
-            code = elem.get('commit').get('tree').get('sha')
+            code = elem.get('sha')
             print("{}: {}".format(code, author))
         else:
             break
