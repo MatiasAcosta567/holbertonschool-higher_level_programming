@@ -7,5 +7,5 @@ in the header of the response"""
 
 
 with urllib.request.urlopen(argv[1]) as response:
-    info = dict(response.info())
+    info = response.info()
 print(info['X-Request-Id'])
