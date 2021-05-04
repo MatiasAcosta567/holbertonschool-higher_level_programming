@@ -6,7 +6,7 @@ request(process.argv[2], function (err, res, body) {
     const films = JSON.parse(body).results;
     films.forEach(film => {
       film.characters.forEach(elem => {
-        if (elem === 'https://swapi-api.hbtn.io/api/people/18/') {
+        if (elem.endsWith('/18/')) {
           total++;
         }
       });
