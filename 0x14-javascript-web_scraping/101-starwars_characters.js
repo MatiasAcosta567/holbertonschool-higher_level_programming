@@ -8,7 +8,7 @@ request(api, function (err, res, body) {
     characters.forEach(element => {
       request(element, function (err, res, body) {
         if (!err) {
-          console.log(JSON.parse(body).name);
+          return console.log(JSON.parse(body).name);
         }
       });
     });
